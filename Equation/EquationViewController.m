@@ -17,21 +17,10 @@
 
 @implementation EquationViewController
 
-@synthesize label1, label2;
+@synthesize labelReal1, labelReal2, labelImaginary1, labelImaginary2;
 
 @synthesize a,b,c;
 
-- (double)result1
-{
-    Equation *e = [[Equation alloc] initWithA:a b:b c:c];
-    return [e result1];
-}
-
-- (double)result2
-{
-    Equation *e = [[Equation alloc] initWithA:a b:b c:c];
-    return [e result2];
-}
 
 // 2次方程式の解の公式を計算し，画面に表示します。
 // 
@@ -62,6 +51,9 @@
 //       実行すると警告が出ますが，最初のうちは無視しましょう。
 // (3-2) 次に result1, result2 を使っているすべての場所を探すため，これらをコメントアウトしましょう。
 //       エラーが出てビルドできなくなります。
+// (3-3) エラーが出ている部分(result1,result2を使っている部分)を real1, real2, imaginary1, imaginary2 に置き換えます。
+//       ビュー(MainStoryboard)も変更しましょう。
+//       実行するとアボートします。
 
 - (void)viewDidLoad
 {
@@ -71,11 +63,14 @@
     b = -3;
     c = 2;
     
-    double result1 = [self result1];
-    double result2 = [self result2];
+    Equation *e = [[Equation alloc] initWithA:a b:b c:c];
     
-    [label1 setText:[NSString stringWithFormat:@"%f", result1]];
-    [label2 setText:[NSString stringWithFormat:@"%f", result2]];
+    
+    [labelReal1 setText:[NSString stringWithFormat:@"%f", [e real1]]];
+    [labelReal2 setText:[NSString stringWithFormat:@"%f", [ e real2]]];
+    [labelImaginary1 setText:[NSString stringWithFormat:@"%fi", [e imaginary1]]];
+    [labelImaginary2 setText:[NSString stringWithFormat:@"%fi", [e imaginary2]]];
+
 }
 
 - (void)didReceiveMemoryWarning

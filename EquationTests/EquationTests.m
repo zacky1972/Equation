@@ -34,8 +34,10 @@ Equation* e;
     // STAssertEqualsWithAccuracy は浮動小数点演算をテストするときに使います。
     // 浮動小数点演算では誤差が発生するので，誤差の範囲内で等しいことを確かめる必要があります。
     // accuracy とは誤差のことです。
-    STAssertEqualsWithAccuracy(2.0, [e result1], 0.00001, @"result1 error");
-    STAssertEqualsWithAccuracy(1.0, [e result2], 0.00001, @"result2 error");
+    STAssertEqualsWithAccuracy(2.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(1.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
 // x^2 + 2x + 1 = 0 をテスト
@@ -44,8 +46,10 @@ Equation* e;
 {
     e = [[Equation alloc] initWithA:1 b:2 c:1];
     
-    STAssertEqualsWithAccuracy(-1.0, [e result1], 0.00001, @"result1 error");
-    STAssertEqualsWithAccuracy(-1.0, [e result2], 0.00001, @"result2 error");
+    STAssertEqualsWithAccuracy(-1.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-1.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
 // test1, test2 について。
@@ -63,8 +67,10 @@ Equation* e;
     // STAssertEqualsWithAccuracy は浮動小数点演算をテストするときに使います。
     // 浮動小数点演算では誤差が発生するので，誤差の範囲内で等しいことを確かめる必要があります。
     // accuracy とは誤差のことです。
-    STAssertEqualsWithAccuracy(1.0+sqrt(2.0), [e result1], 0.00001, @"result1 error");
-    STAssertEqualsWithAccuracy(1.0-sqrt(2.0), [e result2], 0.00001, @"result2 error");
+    STAssertEqualsWithAccuracy(1.0+sqrt(2.0), [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(1.0-sqrt(2.0), [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(0.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
 // test1, test3 について。
@@ -92,8 +98,10 @@ Equation* e;
 {
     e = [[Equation alloc] initWithA:1 b:2 c:2];
     
-    STAssertEqualsWithAccuracy(1.0+sqrt(-1.0), [e result1], 0.00001, @"result1 error");
-    STAssertEqualsWithAccuracy(1.0-sqrt(-1.0), [e result2], 0.00001, @"result2 error");
+    STAssertEqualsWithAccuracy(1.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(1.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(sqrt(2.0), [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(-sqrt(2.0), [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
 // ソフトウェアテストは同値クラスではないものを網羅的に行ったほうがいいです。
@@ -107,9 +115,10 @@ Equation* e;
 {
     e = [[Equation alloc] initWithA:1 b:2 c:2];
     
-    STAssertEqualsWithAccuracy(5.0+sqrt(-1.0), [e result1], 0.00001, @"result1 error");
-    STAssertEqualsWithAccuracy(5.0-sqrt(-1.0), [e result2], 0.00001, @"result2 error");
-    
+    STAssertEqualsWithAccuracy(5.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(5.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(sqrt(2.0), [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(-sqrt(2.0), [e imaginary2], 0.00001, @"imaginary2 error");
 }
 // あれあれ？ テストにパスしてしまいますね。どうしてでしょう？
 

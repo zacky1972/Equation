@@ -10,8 +10,13 @@
 
 @interface EquationViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *label1;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *labelReal1;
+@property (weak, nonatomic) IBOutlet UILabel *labelReal2;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelImaginary1;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelImaginary2;
+
 
 @property double a;
 @property double b;
