@@ -38,4 +38,14 @@ Equation* e;
     STAssertEqualsWithAccuracy(1.0, [e result2], 0.00001, @"result2 error");
 }
 
+// x^2 + 2x + 1 = 0 をテスト
+// 実数解1つ(重解)の場合
+- (void)test2
+{
+    e = [[Equation alloc] initWithA:1 b:2 c:1];
+    
+    STAssertEqualsWithAccuracy(-1.0, [e result1], 0.00001, @"result1 error");
+    STAssertEqualsWithAccuracy(-1.0, [e result2], 0.00001, @"result2 error");
+}
+
 @end
