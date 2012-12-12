@@ -19,4 +19,9 @@
 -(double)result1;
 -(double)result2;
 
+-(double)real1;
+-(double)real2;
+-(double)imaginary1;
+-(double)imaginary2;
+
 @end
