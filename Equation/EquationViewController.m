@@ -18,6 +18,7 @@
 
 @synthesize label1, label2;
 
+@synthesize a,b,c;
 
 // 2次方程式の解の公式を計算し，画面に表示します。
 // 
@@ -27,14 +28,17 @@
 //
 // このままの状態ではソフトウェアテストを書けないので，
 // まずはモデルとコントローラーを分離するリファクタリングを行います。
+// (1-1) まず局所変数a,b,cをメンバー変数にします。
+// こうすることでクラス中のどこからでも変数を参照できるようになり，
+// メソッドの抽出を行いやすくなります。
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    double a = 1;
-    double b = -3;
-    double c = 2;
+    a = 1;
+    b = -3;
+    c = 2;
     
     double result1 = (-b + sqrt(b * b - 4 * a * c))/(2*a);
     double result2 = (-b - sqrt(b * b - 4 * a * c))/(2*a);
