@@ -10,6 +10,8 @@
 
 @interface Equation : NSObject
 
+- (id)initWithA:(double)a b:(double)b c:(double)c;
+
 @property double a;
 @property double b;
 @property double c;

@@ -23,19 +23,13 @@
 
 - (double)result1
 {
-    Equation *e = [[Equation alloc] init];
-    [e setA:a];
-    [e setB:b];
-    [e setC:c];
+    Equation *e = [[Equation alloc] initWithA:a b:b c:c];
     return [e result1];
 }
 
 - (double)result2
 {
-    Equation *e = [[Equation alloc] init];
-    [e setA:a];
-    [e setB:b];
-    [e setC:c];
+    Equation *e = [[Equation alloc] initWithA:a b:b c:c];
     return [e result2];
 }
 
@@ -52,6 +46,7 @@
 // メソッドの抽出を行いやすくなります。
 // (1-2) 次にresult1, result2 の計算に対して，それぞれメソッドの抽出を行います。
 // (1-3) 次にクラスの抽出を行います。メソッド result1, result2 を新たに作った Equation クラスに移動します。
+// (1-4) 便利のため，イニシャライザを整備します。
 
 
 - (void)viewDidLoad
