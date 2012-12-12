@@ -9,6 +9,7 @@
 #import "EquationViewController.h"
 
 #import <math.h>
+#import "Equation.h"
 
 @interface EquationViewController ()
 
@@ -22,12 +23,20 @@
 
 - (double)result1
 {
-    return (-b + sqrt(b * b - 4 * a * c))/(2*a);
+    Equation *e = [[Equation alloc] init];
+    [e setA:a];
+    [e setB:b];
+    [e setC:c];
+    return [e result1];
 }
 
 - (double)result2
 {
-    return (-b - sqrt(b * b - 4 * a * c))/(2*a);
+    Equation *e = [[Equation alloc] init];
+    [e setA:a];
+    [e setB:b];
+    [e setC:c];
+    return [e result2];
 }
 
 // 2次方程式の解の公式を計算し，画面に表示します。
@@ -42,6 +51,7 @@
 // こうすることでクラス中のどこからでも変数を参照できるようになり，
 // メソッドの抽出を行いやすくなります。
 // (1-2) 次にresult1, result2 の計算に対して，それぞれメソッドの抽出を行います。
+// (1-3) 次にクラスの抽出を行います。メソッド result1, result2 を新たに作った Equation クラスに移動します。
 
 
 - (void)viewDidLoad
