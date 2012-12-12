@@ -85,4 +85,20 @@ Equation* e;
 
 
 
+
+// x^2 + 2x + 1 = 0 をテスト
+// 虚数解 2つの場合。
+- (void)test4
+{
+    e = [[Equation alloc] initWithA:1 b:2 c:2];
+    
+    STAssertEqualsWithAccuracy(1.0+sqrt(-1.0), [e result1], 0.00001, @"result1 error");
+    STAssertEqualsWithAccuracy(1.0-sqrt(-1.0), [e result2], 0.00001, @"result2 error");
+}
+
+// ソフトウェアテストは同値クラスではないものを網羅的に行ったほうがいいです。
+// 2次方程式の解の場合，実数解2つ，重解と来たので，次は虚数解2つでしょうね。
+// 虚数解2つの場合として test4 を作ってみました。どうでしょう？ パスしましたか？
+// 本当にこれでよかったんですかね？
+
 @end
