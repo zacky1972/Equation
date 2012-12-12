@@ -7,14 +7,15 @@
 //
 
 #import "EquationTests.h"
+#import "Equation.h"
 
 @implementation EquationTests
+
+Equation* e;
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
 }
 
 - (void)tearDown
@@ -24,9 +25,11 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)test1
 {
-    STFail(@"Unit tests are not implemented yet in EquationTests");
+    e = [[Equation alloc] initWithA:1 b:-3 c:2];
+    STAssertEqualsWithAccuracy(2.0, [e result1], 0.00001, @"result1 error");
+    STAssertEqualsWithAccuracy(1.0, [e result2], 0.00001, @"result2 error");
 }
 
 @end
