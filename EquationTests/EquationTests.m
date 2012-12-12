@@ -48,4 +48,9 @@ Equation* e;
     STAssertEqualsWithAccuracy(-1.0, [e result2], 0.00001, @"result2 error");
 }
 
+// test1, test2 について。
+//
+// このように異なる例を与えて動作を確かめます。
+// テストで与える例のことをテストケースといいます。
+
 @end
