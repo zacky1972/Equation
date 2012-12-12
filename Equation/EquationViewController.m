@@ -20,6 +20,16 @@
 
 @synthesize a,b,c;
 
+- (double)result1
+{
+    return (-b + sqrt(b * b - 4 * a * c))/(2*a);
+}
+
+- (double)result2
+{
+    return (-b - sqrt(b * b - 4 * a * c))/(2*a);
+}
+
 // 2次方程式の解の公式を計算し，画面に表示します。
 // 
 // モデルとコントローラーが一体になったままの状態です。
@@ -31,6 +41,8 @@
 // (1-1) まず局所変数a,b,cをメンバー変数にします。
 // こうすることでクラス中のどこからでも変数を参照できるようになり，
 // メソッドの抽出を行いやすくなります。
+// (1-2) 次にresult1, result2 の計算に対して，それぞれメソッドの抽出を行います。
+
 
 - (void)viewDidLoad
 {
@@ -40,8 +52,8 @@
     b = -3;
     c = 2;
     
-    double result1 = (-b + sqrt(b * b - 4 * a * c))/(2*a);
-    double result2 = (-b - sqrt(b * b - 4 * a * c))/(2*a);
+    double result1 = [self result1];
+    double result2 = [self result2];
     
     [label1 setText:[NSString stringWithFormat:@"%f", result1]];
     [label2 setText:[NSString stringWithFormat:@"%f", result2]];
