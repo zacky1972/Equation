@@ -29,9 +29,15 @@
     return b * b - 4 * a * c;
 }
 
+// 実数解ならば true を返す
+- (BOOL)isReal
+{
+    return [self discriminant] >= 0;
+}
+
 - (double)real1
 {
-    if([self discriminant] >= 0) {
+    if([self isReal]) {
         return (-b + sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
@@ -39,7 +45,7 @@
 
 - (double)real2
 {
-    if([self discriminant] >= 0) {
+    if([self isReal]) {
         return (-b - sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
@@ -48,7 +54,7 @@
 
 - (double)imaginary1
 {
-    if([self discriminant] >= 0) {
+    if([self isReal]) {
         return 0;
     }
     return (sqrt(-[self discriminant]))/(2*a);
@@ -56,7 +62,7 @@
 
 - (double)imaginary2
 {
-    if([self discriminant] >= 0) {
+    if([self isReal]) {
         return 0;
     }
     return -(sqrt(-[self discriminant]))/(2*a);

@@ -61,22 +61,23 @@
 //
 // ある程度テストコードが揃ったので，リファクタリングをしてみましょう。
 // (4-1) メソッドの抽出で，判別式 discriminant を追加します。
+// (4-2) メソッドの抽出で，実数判定 isReal を追加します。
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     a = 1;
-    b = -3;
-    c = 2;
+    b = -8;
+    c = 5;
     
     Equation *e = [[Equation alloc] initWithA:a b:b c:c];
     
     
-    [labelReal1 setText:[NSString stringWithFormat:@"%f", [e real1]]];
-    [labelReal2 setText:[NSString stringWithFormat:@"%f", [ e real2]]];
-    [labelImaginary1 setText:[NSString stringWithFormat:@"%fi", [e imaginary1]]];
-    [labelImaginary2 setText:[NSString stringWithFormat:@"%fi", [e imaginary2]]];
+    [labelReal1 setText:[NSString stringWithFormat:@"%3.3f", [e real1]]];
+    [labelReal2 setText:[NSString stringWithFormat:@"%3.3f", [ e real2]]];
+    [labelImaginary1 setText:[NSString stringWithFormat:@"%3.3fi", [e imaginary1]]];
+    [labelImaginary2 setText:[NSString stringWithFormat:@"%3.3fi", [e imaginary2]]];
 
 }
 
