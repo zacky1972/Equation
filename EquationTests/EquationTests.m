@@ -100,5 +100,16 @@ Equation* e;
 // 2次方程式の解の場合，実数解2つ，重解と来たので，次は虚数解2つでしょうね。
 // 虚数解2つの場合として test4 を作ってみました。どうでしょう？ パスしましたか？
 // 本当にこれでよかったんですかね？
-
+//
+// 試しにわざとエラーになるようにしてみましょう。
+// 同じ式で期待値をわざと変えてみました。
+- (void)testError
+{
+    e = [[Equation alloc] initWithA:1 b:2 c:2];
+    
+    STAssertEqualsWithAccuracy(5.0+sqrt(-1.0), [e result1], 0.00001, @"result1 error");
+    STAssertEqualsWithAccuracy(5.0-sqrt(-1.0), [e result2], 0.00001, @"result2 error");
+    
+}
+// あれあれ？ テストにパスしてしまいますね。どうしてでしょう？
 @end
