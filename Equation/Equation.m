@@ -23,18 +23,24 @@
     return self;
 }
 
+// 判別式 discriminant
+- (double)discriminant
+{
+    return b * b - 4 * a * c;
+}
+
 - (double)real1
 {
-    if(b * b - 4 * a * c >= 0) {
-        return (-b + sqrt(b * b - 4 * a * c))/(2*a);
+    if([self discriminant] >= 0) {
+        return (-b + sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
 }
 
 - (double)real2
 {
-    if(b * b - 4 * a * c >= 0) {
-        return (-b - sqrt(b * b - 4 * a * c))/(2*a);
+    if([self discriminant] >= 0) {
+        return (-b - sqrt([self discriminant]))/(2*a);
     }
     return (-b)/(2*a);
 }
@@ -42,18 +48,18 @@
 
 - (double)imaginary1
 {
-    if(b * b - 4 * a * c >= 0) {
+    if([self discriminant] >= 0) {
         return 0;
     }
-    return (sqrt(-(b * b - 4 * a * c)))/(2*a);
+    return (sqrt(-[self discriminant]))/(2*a);
 }
 
 - (double)imaginary2
 {
-    if(b * b - 4 * a * c >= 0) {
+    if([self discriminant] >= 0) {
         return 0;
     }
-    return -(sqrt(-(b * b - 4 * a * c)))/(2*a);
+    return -(sqrt(-[self discriminant]))/(2*a);
 }
 
 @end
