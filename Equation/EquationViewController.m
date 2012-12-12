@@ -54,6 +54,8 @@
 // (3-3) エラーが出ている部分(result1,result2を使っている部分)を real1, real2, imaginary1, imaginary2 に置き換えます。
 //       ビュー(MainStoryboard)も変更しましょう。
 //       実行するとアボートします。
+// (3-4) ようやく real1, real2, imaginary1, imaginary2 を実装します。
+//       おや，テストコード test4, test5 が間違っているようです。
 
 - (void)viewDidLoad
 {

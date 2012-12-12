@@ -23,16 +23,37 @@
     return self;
 }
 
-/*
-- (double)result1
+- (double)real1
 {
-    return (-b + sqrt(b * b - 4 * a * c))/(2*a);
+    if(b * b - 4 * a * c >= 0) {
+        return (-b + sqrt(b * b - 4 * a * c))/(2*a);
+    }
+    return (-b)/(2*a);
 }
 
-- (double)result2
+- (double)real2
 {
-    return (-b - sqrt(b * b - 4 * a * c))/(2*a);
+    if(b * b - 4 * a * c >= 0) {
+        return (-b - sqrt(b * b - 4 * a * c))/(2*a);
+    }
+    return (-b)/(2*a);
 }
- */
+
+
+- (double)imaginary1
+{
+    if(b * b - 4 * a * c >= 0) {
+        return 0;
+    }
+    return (sqrt(-(b * b - 4 * a * c)))/(2*a);
+}
+
+- (double)imaginary2
+{
+    if(b * b - 4 * a * c >= 0) {
+        return 0;
+    }
+    return -(sqrt(-(b * b - 4 * a * c)))/(2*a);
+}
 
 @end
