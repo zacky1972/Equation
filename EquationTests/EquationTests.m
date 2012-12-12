@@ -98,10 +98,10 @@ Equation* e;
 {
     e = [[Equation alloc] initWithA:1 b:2 c:2];
     
-    STAssertEqualsWithAccuracy(1.0, [e real1], 0.00001, @"real1 error");
-    STAssertEqualsWithAccuracy(1.0, [e real2], 0.00001, @"real2 error");
-    STAssertEqualsWithAccuracy(sqrt(2.0), [e imaginary1], 0.00001, @"imaginary1 error");
-    STAssertEqualsWithAccuracy(-sqrt(2.0), [e imaginary2], 0.00001, @"imaginary2 error");
+    STAssertEqualsWithAccuracy(-1.0, [e real1], 0.00001, @"real1 error");
+    STAssertEqualsWithAccuracy(-1.0, [e real2], 0.00001, @"real2 error");
+    STAssertEqualsWithAccuracy(1.0, [e imaginary1], 0.00001, @"imaginary1 error");
+    STAssertEqualsWithAccuracy(-1.0, [e imaginary2], 0.00001, @"imaginary2 error");
 }
 
 // ソフトウェアテストは同値クラスではないものを網羅的に行ったほうがいいです。
@@ -111,6 +111,7 @@ Equation* e;
 //
 // 試しにわざとエラーになるようにしてみましょう。
 // 同じ式で期待値をわざと変えてみました。
+/*
 - (void)testError
 {
     e = [[Equation alloc] initWithA:1 b:2 c:2];
@@ -120,6 +121,7 @@ Equation* e;
     STAssertEqualsWithAccuracy(sqrt(2.0), [e imaginary1], 0.00001, @"imaginary1 error");
     STAssertEqualsWithAccuracy(-sqrt(2.0), [e imaginary2], 0.00001, @"imaginary2 error");
 }
+ */
 // あれあれ？ テストにパスしてしまいますね。どうしてでしょう？
 
 // 実は虚数や0で割り算した場合など，計算結果が実数で表せない値になってしまったとき
