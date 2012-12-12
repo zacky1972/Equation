@@ -23,6 +23,7 @@
     return self;
 }
 
+/*
 - (double)result1
 {
     return (-b + sqrt(b * b - 4 * a * c))/(2*a);
@@ -32,5 +33,6 @@
 {
     return (-b - sqrt(b * b - 4 * a * c))/(2*a);
 }
+ */
 
 @end

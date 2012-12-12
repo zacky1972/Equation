@@ -16,9 +16,11 @@
 @property double b;
 @property double c;
 
+/*
 -(double)result1;
 -(double)result2;
-
+*/
+ 
 -(double)real1;
 -(double)real2;
 -(double)imaginary1;
