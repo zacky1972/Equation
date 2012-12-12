@@ -1,18 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Equation View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="EquationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="x =" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwV-sN-RHo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="x =" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbQ-PH-jVR">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4D-dS-atM">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="zFg-rz-qVK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oug-Qd-0LT">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Oug-Qd-0LT" firstAttribute="baseline" secondItem="CbQ-PH-jVR" secondAttribute="baseline" type="default" id="2Ap-yK-BY0"/>
+                            <constraint firstItem="b4D-dS-atM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="139" id="Cjg-QF-7oa"/>
+                            <constraint firstItem="cwV-sN-RHo" firstAttribute="top" secondItem="3" secondAttribute="top" constant="219" id="FYw-nc-lWC"/>
+                            <constraint firstItem="CbQ-PH-jVR" firstAttribute="leading" secondItem="cwV-sN-RHo" secondAttribute="leading" type="default" id="Nas-vr-7Q7"/>
+                            <constraint firstItem="b4D-dS-atM" firstAttribute="baseline" secondItem="cwV-sN-RHo" secondAttribute="baseline" type="default" id="Pqn-M2-4MG"/>
+                            <constraint firstItem="Oug-Qd-0LT" firstAttribute="trailing" secondItem="b4D-dS-atM" secondAttribute="trailing" type="default" id="TSq-cv-LGn"/>
+                            <constraint firstAttribute="bottom" secondItem="Oug-Qd-0LT" secondAttribute="bottom" constant="249" id="Vce-7t-y3y"/>
+                            <constraint firstItem="Oug-Qd-0LT" firstAttribute="leading" secondItem="b4D-dS-atM" secondAttribute="leading" type="default" id="YBp-VO-7Cu"/>
+                            <constraint firstItem="cwV-sN-RHo" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="102" id="oQS-lD-gAX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label1" destination="b4D-dS-atM" id="n9Q-4P-nWO"/>
+                        <outlet property="label2" destination="Oug-Qd-0LT" id="2yj-4m-POg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
